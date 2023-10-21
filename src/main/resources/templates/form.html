@@ -28,9 +28,14 @@
 				<input id="valor02" name="valor02" type="text" />				
 			</div>
 			<div>
-				<button type="button" id="submitBtn">Calcular</button>
+				<button type="submit" id="submitBtn">Calcular</button>
 			</div>
 		</form>
+		<!-- Seção de resposta -->
+		<div th:if="${response != null}" id="responseDiv">
+			<h4>Resposta:</h4>
+			<span th:text="${response}"></span>
+		</div>
 	</div>
 </body>
 </html>
