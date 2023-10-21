@@ -14,7 +14,7 @@ public class WebController {
 	@GetMapping("/")
 	public String showForm(Model model) {
 		//adicionar uma lista de operações
-		model.addAttribute("modelOperacoes",List.of("Soma","Subtracao"));
+		model.addAttribute("modelOperacoes",List.of("Soma","Subtracao","Divisão"));
 		return "form";
 	}
 	
