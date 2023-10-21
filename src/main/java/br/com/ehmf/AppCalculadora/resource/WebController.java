@@ -27,17 +27,22 @@ public class WebController {
 			return null;
 		
 		String resposta = "";
+		int resp = 0;
 		switch (modelOperacao) {
 			case "Soma":
-				int resp = Integer.parseInt(valor01) + Integer.parseInt(valor02);
-				resposta = String.valueOf(resp);
+				resp = Integer.parseInt(valor01) + Integer.parseInt(valor02);				
 				break;
 			case "Subtracao":
-				int resp = Integer.parseInt(valor01) - Integer.parseInt(valor02);
-				resposta = String.valueOf(resp);
+				resp = Integer.parseInt(valor01) - Integer.parseInt(valor02);				
 				break;
 		}
+		resposta = String.valueOf(resp);
 		
+		//devolver a resposta para a tela:
+		model.addAttribute("modelOperacoes",List.of("Soma","Subtracao"));
+		model.addAttribute("response",resposta);
+		model.addAttribute("selectedModel",modelOperacao);
+		return "form";		
 	}
 	
 }
